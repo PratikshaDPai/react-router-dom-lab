@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function MailboxForm({ addMailbox }) {
   const initialState = { boxOwner: "", boxSize: "Small" };
   const [formData, setFormData] = useState(initialState);
+  const navigate = useNavigate();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     addMailbox(formData);
     setFormData(initialState);
+    navigate("/mailboxes");
   };
 
   const handleChange = ({ target }) => {
