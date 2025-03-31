@@ -7,7 +7,7 @@ export default function MailboxList({ mailboxes }) {
       <nav>
         <ul>
           {mailboxes.map((mailbox) => (
-            <li key={mailbox._id}>
+            <li key={mailbox._id} className="mail-box">
               <Link to={`/mailboxes/${mailbox._id}`}>
                 Mailbox {mailbox._id}
               </Link>
