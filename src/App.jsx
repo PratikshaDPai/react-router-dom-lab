@@ -44,6 +44,15 @@ const App = () => {
           path="/new-mailbox"
           element={<MailboxForm mailboxes={mailboxes} />}
         />
+        <Route
+          path="*"
+          element={
+            <>
+              <h1>Page not found</h1>
+              <h2>Whoops, nothing here!</h2>
+            </>
+          }
+        />
       </Routes>
     </>
   );
