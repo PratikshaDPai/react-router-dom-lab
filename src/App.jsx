@@ -7,19 +7,18 @@ import { useState } from "react";
 import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
 import MailboxForm from "./components/MailboxForm/MailboxForm";
 
+let nextMailboxId = 1;
+
 const App = () => {
-  const [mailboxes, setMailboxes] = useState([
-    {
-      _id: 1,
-      boxSize: "Small",
-      boxOwner: "Alex",
-    },
-    {
-      _id: 2,
-      boxSize: "Large",
-      boxOwner: "Bob",
-    },
-  ]);
+  const [mailboxes, setMailboxes] = useState([]);
+
+  function addMailbox(mailbox) {
+    const newMailboxes = [...mailboxes];
+    newMailboxes.push({ _id: nextMailboxId, ...mailbox });
+    nextMailboxId++;
+    setMailboxes(newMailboxes);
+  }
+
   return (
     <>
       <NavBar />
@@ -42,7 +41,7 @@ const App = () => {
         />
         <Route
           path="/new-mailbox"
-          element={<MailboxForm mailboxes={mailboxes} />}
+          element={<MailboxForm addMailbox={addMailbox} />}
         />
         <Route
           path="*"

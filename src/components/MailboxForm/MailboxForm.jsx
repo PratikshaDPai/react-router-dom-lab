@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function MailboxForm({ mailboxes }) {
+export default function MailboxForm({ addMailbox }) {
   const initialState = { boxOwner: "", boxSize: "Small" };
   const [formData, setFormData] = useState(initialState);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    // TODO : complete submit logic
-    console.log(formData);
+    addMailbox(formData);
+    setFormData(initialState);
   };
 
   const handleChange = ({ target }) => {
