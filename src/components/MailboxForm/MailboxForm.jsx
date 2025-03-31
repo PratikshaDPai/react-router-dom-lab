@@ -28,12 +28,12 @@ export default function MailboxForm({ mailboxes }) {
           onChange={handleChange}
           required
         />
-        <label htmlFor="weight">Weight:</label>
+        <label htmlFor="boxSize">Select a Box Size:</label>
         <select
           type="number"
-          id="weight"
-          name="weight"
-          value={formData.weight}
+          id="boxSize"
+          name="boxSize"
+          value={formData.boxSize}
           onChange={handleChange}
         >
           <option value="Small">Small</option>
