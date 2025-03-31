@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar/NavBar";
 import MailboxList from "./components/MailboxList/MailboxList";
 import { useState } from "react";
 import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
+import MailboxForm from "./components/MailboxForm/MailboxForm";
 
 const App = () => {
   const [mailboxes, setMailboxes] = useState([
@@ -30,6 +31,10 @@ const App = () => {
         <Route
           path="/mailboxes/:mailboxId"
           element={<MailboxDetails mailboxes={mailboxes} />}
+        />
+        <Route
+          path="/new-mailbox"
+          element={<MailboxForm mailboxes={mailboxes} />}
         />
       </Routes>
     </>
