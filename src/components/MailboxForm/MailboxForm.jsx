@@ -33,7 +33,7 @@ export default function MailboxForm({ addMailbox }) {
         />
         <label htmlFor="boxSize">Select a Box Size:</label>
         <select
-          type="number"
+          type="text"
           id="boxSize"
           name="boxSize"
           value={formData.boxSize}
